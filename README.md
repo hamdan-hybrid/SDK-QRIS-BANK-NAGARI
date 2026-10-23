@@ -20,17 +20,18 @@ PM2 mencari Node 22 sendiri (nvm, fnm, n, atau node sistem), jadi tetap jalan wa
 
 ## Pasang
 
-Letakkan folder SDK ini sejajar dengan folder DASHBOARD:
+Letakkan folder SDK ini di `/var/www`, sejajar dengan folder DASHBOARD:
 
 ```
-HYBRID-PARKING/
+/var/www/
 ├── DASHBOARD/
 └── SDK-QRIS-BANK-NAGARI/    ← folder ini
 ```
 
 ```bash
+cd /var/www
 git clone git@github.com:hamdan-hybrid/SDK-QRIS-BANK-NAGARI.git
-cd SDK-QRIS-BANK-NAGARI
+cd /var/www/SDK-QRIS-BANK-NAGARI
 nvm use 22
 npm install --omit=dev
 node index.js              # RUNNING http://localhost:5000 (Ctrl+C = berhenti)
@@ -47,7 +48,7 @@ Agar otomatis hidup lagi bila berhenti atau server restart.
 npm install -g pm2
 
 # 2. Pasang dependency + daftarkan ke PM2 + simpan
-cd SDK-QRIS-BANK-NAGARI
+cd /var/www/SDK-QRIS-BANK-NAGARI
 nvm use 22
 npm run deploy
 
@@ -62,7 +63,7 @@ pm2 startup          # jalankan perintah sudo yang ditampilkan, lalu pm2 save
 ## Update
 
 ```bash
-cd SDK-QRIS-BANK-NAGARI
+cd /var/www/SDK-QRIS-BANK-NAGARI
 git pull
 nvm use 22
 npm run deploy
