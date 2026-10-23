@@ -20,11 +20,10 @@ PM2 mencari Node 22 sendiri (nvm, fnm, n, atau node sistem), jadi tetap jalan wa
 
 ## Pasang
 
-Letakkan folder SDK ini di `/var/www`, sejajar dengan folder DASHBOARD:
+Letakkan folder SDK ini di `/var/www`
 
 ```
 /var/www/
-├── DASHBOARD/
 └── SDK-QRIS-BANK-NAGARI/    ← folder ini
 ```
 
@@ -58,13 +57,3 @@ pm2 logs bank-nagari-qris
 
 # 4. Agar ikut hidup saat server restart (sekali saja)
 pm2 startup          # jalankan perintah sudo yang ditampilkan, lalu pm2 save
-```
-
-## Update
-
-```bash
-cd /var/www/SDK-QRIS-BANK-NAGARI
-git pull
-nvm use 22
-npm run deploy
-```
