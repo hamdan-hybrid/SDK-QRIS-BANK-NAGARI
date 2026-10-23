@@ -5,7 +5,12 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "deploy": "npm install --omit=dev && pm2 startOrRestart ecosystem.config.js && pm2 save",
+    "pm2:start": "pm2 start ecosystem.config.js",
+    "pm2:restart": "pm2 restart bank-nagari-qris",
+    "pm2:stop": "pm2 stop bank-nagari-qris",
+    "pm2:logs": "pm2 logs bank-nagari-qris"
   },
   "dependencies": {
     "axios": "^1.13.6",
@@ -16,7 +21,7 @@
     "pngjs": "^7.0.0"
   },
   "engines": {
-    "node": ">=26.12.1"
+    "node": ">=18"
   },
   "author": "",
   "license": "ISC"
