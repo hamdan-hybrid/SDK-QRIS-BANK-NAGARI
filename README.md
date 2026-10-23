@@ -57,3 +57,4 @@ pm2 logs bank-nagari-qris
 
 # 4. Agar ikut hidup saat server restart (sekali saja)
 pm2 startup          # jalankan perintah sudo yang ditampilkan, lalu pm2 save
+```
